@@ -45,7 +45,7 @@ class XmlCommand1:
             for number, key in enumerate(self.values):
                 self.value_dict[key] = str(number)
 
-        elif bounds[0] is 0 and bounds[1] is 48:
+        elif bounds[0] == 0 and bounds[1] == 48:
             self.value_dict = {}
             decibel = -12
             for number in range(49):
@@ -56,6 +56,9 @@ class XmlCommand1:
                 self.value_dict[key] = str(number)
                 decibel += 0.5
 
+        elif bounds[0] == 0 and bounds[1] == 1:
+            self.value_dict = {"Off": 0,
+                               "On": 1}
 
 class XmlCommand3:
     """
@@ -93,7 +96,7 @@ class XmlCommand3:
             for number, key in enumerate(self.values):
                 self.value_dict[key] = str(number)
 
-        elif bounds[0] is 0 and bounds[1] is 48:
+        elif bounds[0] == 0 and bounds[1] == 48:
             self.value_dict = {}
             decibel = -12
             for number in range(49):
@@ -104,6 +107,9 @@ class XmlCommand3:
                 self.value_dict[key] = str(number)
                 decibel += 0.5
 
+        elif bounds[0] == 0 and bounds[1] == 1:
+            self.value_dict = {"Off": 0,
+                               "On": 1}
 
 def make_xml_command(command, value, zone=None):
     """
